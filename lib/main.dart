@@ -25,8 +25,17 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
-  var heroTagList = ["paw1", "paw2", "paw3", "paw4", "paw5", "paw6", "paw7", "paw8", "paw9"];
+  var heroTagList = [
+    "paw1",
+    "paw2",
+    "paw3",
+    "paw4",
+    "paw5",
+    "paw6",
+    "paw7",
+    "paw8",
+    "paw9"
+  ];
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
@@ -56,7 +65,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 flex: 3,
                 child: Padding(
                   padding:
-                  const EdgeInsets.only(top: 0.0, left: 15.0, right: 10.0),
+                      const EdgeInsets.only(top: 0.0, left: 15.0, right: 10.0),
                   child: Column(
                     children: <Widget>[
                       Row(
@@ -108,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
                                       width: 0.5,
                                     ),
                                     borderRadius:
-                                    BorderRadius.all(Radius.circular(4.0)),
+                                        BorderRadius.all(Radius.circular(4.0)),
                                   ),
                                   child: Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -141,7 +150,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Padding(
                   padding: const EdgeInsets.only(top: 6.0),
                   child:
-                  Text("\u{1F436} Bringing the best puppies of instagram"),
+                      Text("\u{1F436} Bringing the best puppies of instagram"),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(top: 6.0),
@@ -198,24 +207,24 @@ class _MyHomePageState extends State<MyHomePage> {
               return Hero(
                 tag: heroTagList[position],
                 child: InkWell(
-                  child: Card(
-                    color: Colors.redAccent,
-                    child: Center(
-                        child: Icon(Icons.pets, color: Colors.white),
-                  )
-                  ),
-                  onLongPress: (){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => SecondScreen(heroTagList[position])),
-                    );
-                  }
-                ),
+                    child: Card(
+                        color: Colors.redAccent,
+                        child: Center(
+                          child: Icon(Icons.pets, color: Colors.white),
+                        )),
+                    onLongPress: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                SecondScreen(heroTagList[position])),
+                      );
+                    }),
               );
             },
             itemCount: 9,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 3),
+            gridDelegate:
+                SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 3),
           )
         ],
       ),
@@ -264,4 +273,3 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
-
